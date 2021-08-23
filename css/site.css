@@ -1,6 +1,6 @@
 :root{
-    --primary-color: #1d5888;
-    --secondary-color: #ff993b;
+    --primary-color: #0a2635;
+    --secondary-color: #1181c5;
     --dark-color: #292929;
     --white-color: #e7e7e7;
 }
@@ -58,4 +58,8 @@ pre[class*="language-"]{
     white-space: pre-wrap;
     word-break: break-all;
     word-wrap: break-word;
+}
+
+.styleFont{
+font-family: 'Montserrat', sans-serif;
 }

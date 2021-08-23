@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Mike Lee</title>
+    <title>HUNDO: A Coding Project By Mike Lee</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,7 +36,7 @@
 <!-- NAV SECTION -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/mLogoTransparent.png" class="d-inline-block align-text-top" height="25px"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/HUNDO-Small.png" class="d-inline-block align-text-center" height="40px"> HUNDO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -65,8 +65,41 @@
 
 <!-- MAIN SECTION -->
 <main class="flex-shrink-0">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col">
+                <h1 class="display-5 fw-bold lh-1 mb-3 styleFont mt-5">HUNDO: A Coding Project</h1>
+                <h4 class="lead">Live life one loop at a time. A javascript coding exercise using loops. Write a program that displays the numbers from 0 to 100. Display the even numbers in <strong>BOLD</strong>.</h4>
 
-    <div class="container"></div>
+                <h2 class="mt-5 border-bottom border-2">Instructions</h2>
+                <p>Enter a starting value and an ending value. Press the button and the values will appear.</p>
+            </div>
+            <div class="col">
+                <div class="mt-5 mb-5">
+                    <h5>Enter Values</h5>
+                    <form class="row gy-2 gx-3">
+                        <div class="col">
+                            <input id="startValue" type="number" class="form-control" placeholder="Start Value" value=0 aria-label="Start Value">
+                        </div>
+                        <div class="col">
+                            <input id="endValue" type="number" class="form-control" placeholder="End Value" value=100 aria-label="End Value">
+                        </div>
+                        <div class="col-12 ">
+                            <button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Display the HUNDO</button>
+                        </div>
+                    </form>
+                    <h2 class="mt-5 border-bottom border-2">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <tbody id="results">
+                                <!-- Results Here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 
 <!-- FOOTER SECTION -->
@@ -103,6 +136,10 @@
  integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
 </script>
 <script src="js/site.js"></script>
+
+<script>
+    document.getElementById("btnSubmit").addEventListener("click", getValues);
+</script>
 
 </body>
 

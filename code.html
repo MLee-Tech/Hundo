@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A Coding Project By Mike Lee</title>
+    <title>HUNDO: A Coding Project By Mike Lee</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,7 +24,7 @@
 <!-- NAV SECTION -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/mLogoTransparent.png" class="d-inline-block align-text-top" height="25px"> APP NAME</a>
+        <a class="navbar-brand" href="#"><img src="img/HUNDO-Small.png" class="d-inline-block align-text-center" height="40px"> HUNDO</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -54,22 +54,56 @@
 <!-- MAIN SECTION -->
 <main class="flex-shrink-0">
     <div class="container py-5 px-5 mt-5">
-        <h2 class="border-1 border-bottom border-dark">The Code for APP NAME</h2>
+        <h2 class="border-1 border-bottom border-dark">The Code for HUNDO</h2>
         <div class="row row-cols-1 row-cols-lg-2">
             <div class="col-lg-8">
                 <pre class="line-numbers">
                     <code class="language-javascript">
-                        // Call Hello World
-                        function helloWorld(){
-                            alert("Hello World!");
+                        function getValues(){
+                            let startValue = document.getElementById("startValue").value;
+                            let endValue = document.getElementById("endValue").value;
+                            startValue = parseInt(startValue);
+                            endValue = parseInt(endValue);
+                            if (Number.isInteger(startValue) && Number.isInteger(endValue) ) {
+                                let numbers = generateNumbers(startValue, endValue);
+                                displayNumbers(numbers);
+                            }
+                            else{alert("Please Enter Valid Numbers");}  
+                        }
+                        
+                        function generateNumbers(sValue, eValue){
+                            let numbers = [];
+                            for (let index = sValue; index <= eValue; index++) {
+                                numbers.push(index);        
+                            }
+                            return numbers;
+                        }
+
+                        function displayNumbers(numbers){
+                            let templateRows = "";
+                            for (let index = 0; index < numbers.length; index++) {
+                                let number = numbers[index];
+                                if(Number.isInteger(number / 2)){
+                                    templateRows += `&lt;tr>&lt;td>&lt;strong>${number}&lt;/strong>&lt;/td>&lt;/tr>`; 
+                                }else{
+                                    templateRows += `&lt;tr>&lt;td>${number}&lt;/td>&lt;/tr>`; 
+                                }
+                            }
+                            document.getElementById("results").innerHTML = templateRows;
                         }
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4">
-                <p>The Code is structured in one function.</p>
-                <h5>Hello World</h5>
-                <p>Hello World is a function that displays an alert with a message of "Hello World!"</p>
+                <br>
+                <h5>getValues - Controller Function</h5>
+                <p>This block of code is the controller for the application. It retrieves the start and end values from the DOM, validates that they are proper integers, and then executes the next two functions.</p>
+                <br><br>
+                <h5>generateNumbers - Logic Function</h5>
+                <p>This block of code contains the logic to generate the numbers specified by the user, push them into an array, and return that array for use by the application.</p>
+                <br><br>
+                <h5>displayNumbers - View Function</h5>
+                <p>This block of code generates HTML based on whether the number is even or odd and then displays that HTML on the page for the user.</p>
             </div>
         </div>
     </div>
